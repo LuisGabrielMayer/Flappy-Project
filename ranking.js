@@ -98,4 +98,5 @@ window.onGameOver = async score => {
   } catch (e) { fail(e); }
 };
 
+window.getNick = () => nick;
 window.__rankingReady = true;
