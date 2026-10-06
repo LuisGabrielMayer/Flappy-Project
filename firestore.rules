@@ -4,18 +4,22 @@ service cloud.firestore {
     match /scores/{uid} {
       allow read: if true;
 
+      // Primeiro acesso: cria o documento com o apelido e pontuação 0.
       allow create: if request.auth != null && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(['name', 'best', 'updatedAt'])
-        && request.resource.data.name is string && request.resource.data.name.size() <= 30
+        && request.resource.data.name is string
+        && request.resource.data.name.matches('^[A-Za-z0-9][A-Za-z0-9_ -]{2,15}$')
         && request.resource.data.best is int
-        && request.resource.data.best >= 0 && request.resource.data.best <= 500
+        && request.resource.data.best == 0
         && request.resource.data.updatedAt == request.time;
 
+      // Depois: trocar o apelido e/ou subir a pontuação (nunca diminuir).
       allow update: if request.auth != null && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(['name', 'best', 'updatedAt'])
-        && request.resource.data.name is string && request.resource.data.name.size() <= 30
+        && request.resource.data.name is string
+        && request.resource.data.name.matches('^[A-Za-z0-9][A-Za-z0-9_ -]{2,15}$')
         && request.resource.data.best is int
-        && request.resource.data.best > resource.data.best
+        && request.resource.data.best >= resource.data.best
         && request.resource.data.best <= 500
         && request.resource.data.updatedAt == request.time;
 
