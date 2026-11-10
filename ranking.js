@@ -7,7 +7,7 @@ import { firebaseConfig } from "./config.js";
 
 const $ = id => document.getElementById(id);
 const configured = !firebaseConfig.apiKey.startsWith("COLE");
-const NICK_RE = /^[A-Za-z0-9][A-Za-z0-9_ -]{2,15}$/; // igual à regra do firestore.rules
+const NICK_RE = /^[A-Za-z0-9][A-Za-z0-9_ -]{2,15}$/; 
 let auth, db, user = null, nick = null, serverBest = 0, hasDoc = false;
 
 function explain(e) {
@@ -43,7 +43,7 @@ async function loadTop() {
     const ol = $("list"); ol.textContent = "";
     snap.forEach(d => {
       const li = document.createElement("li");
-      li.textContent = `${d.data().name}: ${d.data().best}`; // textContent evita injeção de HTML
+      li.textContent = `${d.data().name}: ${d.data().best}`; 
       ol.appendChild(li);
     });
     if (snap.empty) ol.textContent = "Ninguém ainda. Seja o primeiro!";
@@ -60,7 +60,7 @@ if (configured) {
     try {
       const s = await getDoc(doc(db, "scores", u.uid));
       if (s.exists()) { hasDoc = true; nick = s.data().name; serverBest = s.data().best; }
-      else openNick(true); // primeiro acesso: apelido obrigatório
+      else openNick(true); 
     } catch (e) { fail(e); }
     updateUI(); loadTop();
   });
