@@ -4,7 +4,13 @@ Jogo inspirado em Flappy Bird, feito com HTML, CSS e JavaScript, com **sprite de
 
 🎮 **Jogue agora:** [COLE-AQUI-O-LINK-DO-GITHUB-PAGES]
 
-![Print do jogo](imagens/print.png)
+<img width="513" height="899" alt="image" src="https://github.com/user-attachments/assets/907951a2-d935-47d9-bdfa-8ec19e0bdbc5" />
+
+<img width="507" height="885" alt="image" src="https://github.com/user-attachments/assets/9da68892-2327-4f35-b81e-666696ee4039" />
+
+<img width="505" height="874" alt="image" src="https://github.com/user-attachments/assets/60fe7538-3c64-4e34-969c-7b666c89064e" />
+
+<img width="504" height="856" alt="image" src="https://github.com/user-attachments/assets/56e04746-98d2-455a-a48e-1263e2572f90" />
 
 ## ✨ Funcionalidades
 - Jogabilidade estilo Flappy Bird: toque ou clique para o pássaro voar e desvie dos canos
