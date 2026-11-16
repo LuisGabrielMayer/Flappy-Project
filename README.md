@@ -2,7 +2,7 @@
 
 Jogo inspirado em Flappy Bird, feito com HTML, CSS e JavaScript, com **sprite de pássaro próprio**, **ranking online** e **login com conta Google**.
 
-🎮 **Jogue agora:** [COLE-AQUI-O-LINK-DO-GITHUB-PAGES]
+🎮 **Jogue agora:** \https://luisgabrielmayer.github.io/Flappy-Project/
 
 <img width="513" height="899" alt="image" src="https://github.com/user-attachments/assets/907951a2-d935-47d9-bdfa-8ec19e0bdbc5" />
 
